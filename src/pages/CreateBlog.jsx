@@ -24,7 +24,6 @@ const CreateBlog = () => {
     setImagePreview(null);
   };
 
-  // Validation schema with Yup
   const validationSchema = Yup.object({
     title: Yup.string().required("Title is required"),
     content: Yup.string().required("Content is required"),
@@ -39,7 +38,7 @@ const CreateBlog = () => {
 
     try {
       await axios.post("https://blog-hqx2.onrender.com/blog/create", formData);
-      navigate("/"); 
+      navigate("/blogs"); 
     } catch (error) {
       console.error(error);
     }

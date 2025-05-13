@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { Menu, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
@@ -29,19 +31,19 @@ const Navbar = () => {
             menuOpen ? 'block' : 'hidden'
           } md:flex space-y-4 md:space-y-0 md:space-x-6 items-center mt-4 md:mt-0 transition-all duration-300`}
         >
-          <li>
-            <a href="#" className="hover:text-red-500 transition duration-200">Home</a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-red-200 transition duration-200">About</a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-red-200 transition duration-200">Services</a>
-          </li>
+          
+          
 
-          <li className="text-sm text-gray-200">
-            {user?.name ?? 'Guest'}
-          </li>
+ <li className="text-sm cursor-pointer">
+  <Link
+    to="/profile"
+    className="bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1 rounded-full transition duration-200 shadow-sm"
+  >
+    {user?.name ?? 'Guest'}
+  </Link>
+</li>
+
+
 
           {user && (
             <li>

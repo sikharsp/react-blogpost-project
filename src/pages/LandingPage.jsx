@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 function LandingPage() {
   return (
+    
     <div className="relative flex flex-col items-center justify-center min-h-screen bg-cover bg-center text-white p-6 font-sans text-center" style={{ backgroundImage: "url('https://source.unsplash.com/random/1600x900')" }}>
       <div className="absolute inset-0 bg-black opacity-50"></div>
 
